@@ -1,0 +1,42 @@
+- hosts: ray_workers
+  tasks:
+    - name: Install Python, pip
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - python3
+        - python3-pip
+      become: true
+
+    - name: Upgrade pip
+      become: true
+      shell: python3 -m pip install pip --upgrade
+
+    - name: Upgrade pyOpenSSL, and urllib3
+      pip:
+        name:
+          - pyopenssl
+          - urllib3
+        state: latest
+      become: true
+
+    - name: Install Python packages
+      pip:
+        name: "{{ item }}"
+        executable: pip3
+      with_items:
+        - pandas
+        - numpy
+        - scikit-learn
+        - ray[default, tune, data, train]
+        - xgboost
+      become: true
+
+    - name: Get dev server IP
+      set_fact:
+        dev_server_ip: "{{ hostvars['dev'].ansible_host }}"
+
+    - name: Start Ray worker node
+      become: true
+      shell: ray start --address="{{ dev_server_ip }}:6379" &
