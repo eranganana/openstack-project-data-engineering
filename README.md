@@ -4,6 +4,7 @@
 Automated deployment of a complete data engineering infrastructure on OpenStack cloud, including production server, development server, and a 3-node Ray cluster for distributed computing.
 
 ## 🏗️ Architecture
+```
 ┌─────────────────┐
 │ Jump Node │
 │ (Floating IP) │
@@ -21,7 +22,7 @@ Automated deployment of a complete data engineering infrastructure on OpenStack 
 ┌──▼──┐ ┌──▼──┐ ┌──▼──┐
 │Node1│ │Node2│ │Node3│
 └─────┘ └─────┘ └─────┘
-
+```
 text
 
 ## 🛠️ Technologies Used
@@ -51,15 +52,17 @@ text
 ```bash
 # Source your OpenStack credentials
 source openrc_albin.sh
-Deploy Servers
-bash
+```
+## Deploy Servers
+```bash
 ./start_servers.sh
-Delete Servers
-bash
+```
+## Delete Servers
+```bash
 ./delete_servers.sh
-
-📁 Project Structure
-text
+```
+## 📁 Project Structure
+```
 ├── start_instances.py      # Main OpenStack deployment script
 ├── start_servers.sh        # Server launch script
 ├── delete_servers.sh       # Server cleanup script
@@ -67,37 +70,22 @@ text
 ├── cloud-config/           # Cloud-init configurations
 ├── development_server/     # Dev environment
 └── production_server/      # Prod environment
-
-🔧 Technical Challenges Solved
+```
+## 🔧 Technical Challenges Solved
 Secret Management: Implemented .gitignore strategy to prevent credential leakage
 
 Cross-Platform Automation: Adapted scripts for both Linux and Windows
 
 Network Configuration: Automated floating IP assignment and SSH proxy jumping
 
-📫 Connect With Me
+## 📫 Connect With Me
 GitHub: eranganana
 
 LinkedIn: https://www.linkedin.com/in/achini-eranga-nanayakkara/
 
 Email: erangananayakkara@yahoo.com
 
-📚 Course Context
+## 📚 Course Context
 This was a group project for Data Engineering course at Uppsala University.
 
 For detailed setup instructions, see course documentation.
-
-
-## Save and Push:
-
-```bash
-# Save the file in Notepad (Ctrl+S), then close
-
-# Add the updated README
-git add README.md
-
-# Commit the change
-git commit -m "Format README with proper Markdown for better presentation"
-
-# Push to GitHub
-git push origin main
