@@ -57,6 +57,7 @@ bash
 Delete Servers
 bash
 ./delete_servers.sh
+
 📁 Project Structure
 text
 ├── start_instances.py      # Main OpenStack deployment script
@@ -66,6 +67,7 @@ text
 ├── cloud-config/           # Cloud-init configurations
 ├── development_server/     # Dev environment
 └── production_server/      # Prod environment
+
 🔧 Technical Challenges Solved
 Secret Management: Implemented .gitignore strategy to prevent credential leakage
 
