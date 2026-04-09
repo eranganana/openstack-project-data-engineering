@@ -93,4 +93,7 @@ Automated deployment of a complete data engineering infrastructure on OpenStack 
 \## Course Context
 
 \*This was a group project for \[Course Name] at \[University]. Full technical documentation below.\*
+<<<<<<< HEAD
 
+=======
+>>>>>>> ee6763f5351530914b54239db0fd15d8af8eb213
